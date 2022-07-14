@@ -18,7 +18,7 @@ pipeline{
 
     parameters{
         choice(name: "FROMCITY", choices: ['Mar del Plata', 'Buenos Aires', 'Vidal', 'Piran', 'Dolores'])
-        choice(name: "TOCITY", choices: ['Mar del Plata', 'Buenos Aires', 'Vidal', 'Piran', 'Dolores'])
+        choice(name: "TOCITY", choices: ['Buenos Aires', 'Mar del Plata', 'Vidal', 'Piran', 'Dolores'])
         string(name: "FROMDATE", defaultValue: "27/07/2022", description: "DD/MM/YYYY.")
         choice(name: "ADULTS", choices: ['1', '2', '3', '4', '5', '6', '7', '8'])
     }
