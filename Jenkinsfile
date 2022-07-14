@@ -37,9 +37,7 @@ pipeline{
     }
 
     post{
-        always{
-            echo 'ACA'
-        }
+
         success{
             script{
                 BUILD_USER = getBuildUser()
@@ -47,9 +45,9 @@ pipeline{
 
             slackSend   channel: 'encontrar-pasajes-de-tren-disponibles',
                         color: COLOR_MAP[currentBuild.currentResult],
-                        message: "Hay pasajes disponibles para el dia buscado!"
+                        message: "Hay pasajes disponibles para el dia ${FROMDATE}!"
         }
-        failure{
+/*         failure{
             script{
                 BUILD_USER = getBuildUser()
             }
@@ -57,7 +55,7 @@ pipeline{
             slackSend   channel: 'encontrar-pasajes-de-tren-disponibles',
                         color: COLOR_MAP[currentBuild.currentResult],
                         message: "No hay pasajes disponibles para el dia buscado!"
-        }
+        } */
     }
 
 }
