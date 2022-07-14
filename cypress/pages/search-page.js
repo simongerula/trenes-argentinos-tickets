@@ -48,7 +48,7 @@ class SearchPage {
         const txtDay = Cypress.env('fromDate').slice(0,2)
         this.dayButton(txtDay)
             .parents('div[class^="dia_"]')
-            .should('have.class', 'dia_no_disponible')
+            .should('have.class', 'dia_disponible')
     }
 
     // NAVIGATION
