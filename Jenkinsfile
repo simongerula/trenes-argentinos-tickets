@@ -37,6 +37,9 @@ pipeline{
     }
 
     post{
+        always{
+            echo 'ACA'
+        }
         success{
             script{
                 BUILD_USER = getBuildUser()
