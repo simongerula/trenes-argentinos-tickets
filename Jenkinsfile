@@ -17,10 +17,10 @@ pipeline{
     tools { nodejs "NodeJS" }
 
     parameters{
-        choice(name: "FROMCITY", choices: ['Mar del Plata', 'Buenos Aires', 'Vidal', 'Piran', 'Dolores'], description: "From City...")
-        choice(name: "TOCITY", choices: ['Mar del Plata', 'Buenos Aires', 'Vidal', 'Piran', 'Dolores'], description: "To City...")
+        choice(name: "FROMCITY", choices: ['Mar del Plata', 'Buenos Aires', 'Vidal', 'Piran', 'Dolores'])
+        choice(name: "TOCITY", choices: ['Mar del Plata', 'Buenos Aires', 'Vidal', 'Piran', 'Dolores'])
         string(name: "FROMDATE", defaultValue: "27/07/2022", description: "DD/MM/YYYY.")
-        choice(name: "ADULTS", choices: ['1', '2', '3', '4', '5', '6', '7', '8'], description: "Adults...")
+        choice(name: "ADULTS", choices: ['1', '2', '3', '4', '5', '6', '7', '8'])
     }
 
     options {
@@ -53,7 +53,7 @@ pipeline{
 
             slackSend   channel: 'encontrar-pasajes-de-tren-disponibles',
                         color: COLOR_MAP[currentBuild.currentResult],
-                        message: "Hay pasajes disponibles para el dia buscado!"
+                        message: "No hay pasajes disponibles para el dia buscado!"
         }
     }
 
