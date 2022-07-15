@@ -31,7 +31,7 @@ pipeline{
         stage('Searching'){
             steps{
                 sh "npm i"
-                sh "npm run cy:run:chrome -- --env fromCity=`${FROMCITY}`,toCity=`${TOCITY}`,fromDate=`${FROMDATE}`,adults=`${ADULTS}`"
+                sh "npm run cy:run:chrome -- --env fromCity='${FROMCITY}',toCity='${TOCITY}',fromDate='${FROMDATE}',adults='${ADULTS}'"
             }
         }
     }
