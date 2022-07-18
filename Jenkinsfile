@@ -3,10 +3,6 @@ def COLOR_MAP = [
     'FAILURE': 'danger'
 ]
 
-def getBuildUser(){
-    return currentBuild.rawBuild.getCause(Cause.UserIdCause).getUserId()
-}
-
 pipeline{
     agent any
 
@@ -39,10 +35,6 @@ pipeline{
     post{
 
         success{
-            script{
-                BUILD_USER = getBuildUser()
-            }
-
             slackSend   channel: 'encontrar-pasajes-de-tren-disponibles',
                         color: COLOR_MAP[currentBuild.currentResult],
                         message: "Hay pasajes disponibles para el dia ${FROMDATE}!"
